@@ -20,9 +20,7 @@
 int WINAPI _start (void)
 {
 	SetErrorMode (SEM_FAILCRITICALERRORS);
-	if (!LoadLibraryW (L"MSVCR120.DLL"))
-		return 126;
-	if (!LoadLibraryW (L"MSVCP120.DLL"))
-		return 126;
-	return 0;
+	if (!LoadLibraryW (L"MSVCR120.DLL") || !LoadLibraryW (L"MSVCP120.DLL"))
+		ExitProcess(126);
+	ExitProcess(0);
 }
