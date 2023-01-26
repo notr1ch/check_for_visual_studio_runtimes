@@ -20,7 +20,9 @@
 int WINAPI _start (void)
 {
 	SetErrorMode (SEM_FAILCRITICALERRORS);
-	if (!LoadLibraryW (L"VCRUNTIME140.DLL") || !LoadLibraryW (L"MSVCP140.DLL") || !LoadLibraryW (L"VCRUNTIME140_1.DLL"))
+	if (!LoadLibraryW (L"VCRUNTIME140.DLL") || !LoadLibraryW (L"MSVCP140.DLL") ||
+		!LoadLibraryW (L"VCRUNTIME140_1.DLL") || !LoadLibraryW (L"MSVCP140_1.DLL") ||
+		!LoadLibraryW (L"MSVCP140_2.DLL"))
 			ExitProcess(126);
 	ExitProcess(0);
 }
